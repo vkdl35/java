@@ -17,17 +17,28 @@ public class Example2 {
 		 **조건문은 반복문 안에 있으면 안됩니다.
 		 */
 		
-		Scanner aa = new Scanner(System.in);
+		Scanner asc = new Scanner(System.in);
 		
+		int a=1;
+		int b=1;
+		int c=0;
 		
+		System.out.println("구구단에 대한 숫자를 입력하세요.");
+		int dd = asc.nextInt();
 		
+		while(a<=9) {
+			b=a*dd;
+			c+=b;
+			a++;
+		}
+		if(c%2==1) {
+			System.out.println("구구단 "+dd+"단을 모두 더한 값은 "+c+"이며 홀수입니다.");
+		}
+		else {
+			System.out.println("구구단 "+dd+"단을 모두 더한 값은 "+c+"이며 짝수입니다.");
+		}
 		
-		
-		
-		
-		
-		
-		
+		asc.close();
 		
 
 	}
