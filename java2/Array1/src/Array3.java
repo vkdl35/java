@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array3 {
@@ -36,27 +37,27 @@ public class Array3 {
 		//foreach를 사용했을 때, 조건문 안에 또 조건문이 들어간 경우
 		
 		
-		String pay[] = {"무통장 입금","신용카드","휴대폰결제","상품권","쿠폰"};
-		Scanner sc = new Scanner(System.in);
+//		String pay[] = {"무통장 입금","신용카드","휴대폰결제","상품권","쿠폰"};
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("결제하고자 하는 형태를 선택해주세요.");
+//		String pm = sc.next();
+//		
+//		for(String z : pay) {	//배열 데이터가 문자면 받는 변수 형태 또한 문자형을 사용해야함
+//			//배열이 문자면 받는 함수도 int가 아닌 string를 사용해야 인식함 (중요!)
+//			if(pm.equals(z)) {	
+//				if(z.equals("휴대폰결제")) {
+//					System.out.println("현재 시스템 점검으로 해당 결제는 사용하실 수 없습니다.");
+//				}
+//				else {
+//					System.out.println(pm+"로 결제 진행됩니다.");
+//				}
+//				//System.out.println(pm+"로 결제 진행됩니다.");
+//			}
+//		}
 		
-		System.out.println("결제하고자 하는 형태를 선택해주세요.");
-		String pm = sc.next();
 		
-		for(String z : pay) {	//배열 데이터가 문자면 받는 변수 형태 또한 문자형을 사용해야함
-			//배열이 문자면 받는 함수도 int가 아닌 string를 사용해야 인식함 (중요!)
-			if(pm.equals(z)) {	
-				if(z.equals("휴대폰결제")) {
-					System.out.println("현재 시스템 점검으로 해당 결제는 사용하실 수 없습니다.");
-				}
-				else {
-					System.out.println(pm+"로 결제 진행됩니다.");
-				}
-				//System.out.println(pm+"로 결제 진행됩니다.");
-			}
-		}
-		
-		
-		sc.close();
+		//sc.close();
 		
 		/*
 		 * [응용문제]
@@ -68,20 +69,34 @@ public class Array3 {
 		
 		String food[] = {"햄버거","피자","치킨","커피"};
 		Scanner aa = new Scanner(System.in);
+		String user;
+		String user_food[] = new String[4];
+		int ct = 0;
 		
-		String total;
-		//String data_food = food.length;
+		//2차배열은 foreach를 못씀
 		
-		for(String p : food) {
+		for(String f : food) {	//문자형엔 int를 쓰면 안됨 오류
+			/*
+			 * 스캐너가 반복문 안에 적용시 loop로 무조건 반복하지는 않음
+			 * 사용자가 입력할 때마다 반복문 범위만큼 출력하는 형태임
+			 */
 			System.out.println("주문하고자 하는 음식을 선택해주세요.");
-			String user = aa.next();
-//			if(user.equals(food)) {
-//				
-//			}
-//			
+			user = aa.next();	//스캔이 돌아가면 일시정지
+			if(user.equals("주문종료")) {
+				break;
+			}
+			else {
+				for(String ff : food) {
+					if(user.equals(ff)) {	//food메뉴와 같은걸 넣었을 때
+						user_food[ct] = ff;
+						ct++;
+					}
+				}
+			}
 		}
 		aa.close();
-//		System.out.println("주문 내역 : ");
+		System.out.println("주문하신 메뉴는 다음과 같습니다." + Arrays.toString(user_food));
+		
 		
 		
 		

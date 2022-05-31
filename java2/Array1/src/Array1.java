@@ -21,7 +21,11 @@ public class Array1 {
 			//a[f] : a[0] ~ a[4] 
 		}
 		
+		//null : 값이 아무것도 없는것
 		
+//		String aaa[] = {"a","b","c","d","e"};
+//		String aaa[] = null;
+//		배열 변수를 비우려면
 		
 		
 		String user[] = new String[3];
