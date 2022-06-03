@@ -32,14 +32,34 @@ public class Class_array3 {
 		
 		jumsu j = new jumsu();
 		j.ck(a1,a2,usernm);	//ck라는 메소드에 위의 데이터 정보를 보냄
+		//매개변수
+		//j.ck(1,2,3)	=> 인수값(인자값)
 	}
 
 }
 
 class jumsu {
+	//메소드 ()안에 값
 	public void ck(String data1[],String data2[],String user) {	//main 메소드에 있는 정보를 받음 (j.ck(a1,a2,usernm))
 		//System.out.println(Arrays.toString(data1));
-		System.out.println(user);
+		//System.out.println(user);
+		int w = 0;
+		int ea = data1.length;
+		boolean ck = false;
+		do {
+			if(user.equals(data1[w])) {	//배열에 동일한 값이 있을 경우
+				String js = data2[w];
+				System.out.printf("%s님은 %s점입니다.",user,js);
+				ck = true;
+			}
+			w++;
+		}while(w < ea);
+		if(ck == false) {	//main class에서 사용자를 검색했을 경우 배열값이 없는 상황 
+			System.out.println("등록된 사용자가 아닙니다.");
+		}
+		
+		
+		
 	}
 }
 
