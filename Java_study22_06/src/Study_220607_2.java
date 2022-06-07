@@ -69,6 +69,8 @@ class ak5 {
 }
 class menus {
 	   private String[][] m;
+	   private String[] box;
+	   private int ct;
 	   public menus() {
 	      String ms[][] = {
 	            {"로켓배송","로켓프레시","쿠팡비즈","골드박스","이벤트","설날","추석"},
@@ -78,17 +80,18 @@ class menus {
 	   }
 	   public String[] aaa() {
 	      int ea = this.m[0].length;
-	      String box[] = new String[5];
+	      this.box = new String[5];
 	      int w = 0;
-	      int ct = 0;
+	      this.ct = 0;
+	      
 	      while(w < ea) {
 	         if(this.m[1][w].equals("Y")) {
-	            box[ct]=m[0][w];
-	            ct++;
+	            this.box[this.ct]=m[0][w];
+	            this.ct++;
 	         }
 	         w++;
 	      }
-	      return box;
+	      return this.box;
 	   }
 
 	}
