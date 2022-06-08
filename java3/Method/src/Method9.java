@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Method9 {
 
@@ -12,16 +13,97 @@ public class Method9 {
 		 * 단 private 및 return을 활용하여 프로그램을 작성합니다.
 		 * **배열 생성해야함
 		 */
+		
+		menus m1 = new menus();
+		String ap[] = m1.aaa();
+		System.out.println(Arrays.toString(ap));
+		
+		//System.out.println(Arrays.toString(m1.get()));
 
 	}
 
 }
 
 class menus {
+	private String[][] m;
+	private String[] box;
+	private int ct;
+
 	public menus() {
-		String ms[][] = {
-				{"로켓배송","로켓프레시","쿠팡비즈","골드박스","이벤트","설날","추석"},
-				{"Y","Y","N","Y","Y","N","Y"}
-		};
+		String ms[][] = { 
+				{ "로켓배송", "로켓프레시", "쿠팡비즈", "골드박스", "이벤트", "설날", "추석" },
+				{ "Y", "Y", "N", "Y", "Y", "N", "Y" } 
+			};
+		this.m = ms;
+	}
+
+	public String[] aaa() {
+		int ea = this.m[0].length;
+		this.box = new String[5];
+		int w = 0;
+		this.ct = 0;
+
+		while (w < ea) {
+			if (this.m[1][w].equals("Y")) {
+				this.box[this.ct] = m[0][w];
+				this.ct++;
+			}
+			w++;
+		}
+		return this.box;
 	}
 }
+
+/*
+
+class menus {
+	private String[][] m;
+	private String[] r = new String[5];
+
+	public menus() {
+		String ms[][] = { { "로켓배송", "로켓프레시", "쿠팡비즈", "골드박스", "이벤트", "설날", "추석" },
+				{ "Y", "Y", "N", "Y", "Y", "N", "Y" } };
+		this.m = ms;
+		redata();
+
+	}
+
+	public void redata() {
+		int ea = this.m[0].length;
+		int w = 0;
+		int ct = 0;
+		String ww[] = new String[ea];
+		do {
+			if (this.m[1][w].equals("Y")) {
+				ww[ct] = this.m[0][w];
+				ct++;
+			}
+			w++;
+		} while (w < ea);
+
+		this.r = ww;
+
+	}
+
+	public String[] get() {
+		return this.r;
+	}
+
+}
+
+*/
+
+
+/*
+	class{
+	int a;		-> field(필드 선언)
+	String b;
+		public aaa(){		->constructor (제일 먼저 실행)
+			
+		}
+		-> method (메소드): 클래스에서 빠질 일이 없음
+		public void
+		public static void
+		public String abc
+	}
+*/
