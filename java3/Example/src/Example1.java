@@ -42,6 +42,7 @@ public class Example1 {
 				Example2 ex2 = new Example2();
 				String msg = ex2.mt(num, user);
 				System.out.println(msg);
+				ex2 = null;
 				if (msg.equals("정답입니다.")) {
 					System.exit(0);
 				}
@@ -51,6 +52,8 @@ public class Example1 {
 		if (total == 0) {
 			System.out.println("게임오버");
 		}
+		sc.close();
+		
 
 	}
 
