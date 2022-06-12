@@ -46,9 +46,34 @@ public class Study_220607 {
 		String info2[] = info.split(",");	//스플릿으로 만든 배열값을 배열박스에 담아줌
 		System.out.println(Arrays.toString(info2));
 		
+		/* return에 값 2개 사용하기 - 배열 사용 */
 		
+		String myinfo[] = p.userinfo2();
+		System.out.println(Arrays.toString(myinfo));
+		//System.out.println(myinfo[0]);	//하나씩 확인
 		
-
+		/* private */
+		
+		t3 t3_in = new t3();
+		t3_in.dtr1("안녕");
+		System.out.println(t3_in.dtr2());
+		t3_in = null;
+		
+		/* private에 대한 객체 선언 형태 */
+		
+		String skey = "a1234567";
+		t4 t4_in = new t4();
+		t4_in.user_id ="lee";
+		System.out.println(t4_in.checks(skey));
+		t4_in = null;
+		
+		/* 필드값 이용방법 */
+		
+		t5 t5_in = new t5("이경민",29,"vkdl35@naver.com",6500);
+		System.out.println(t5_in.data());
+		System.out.println(t5_in.data2());
+		t5_in = null;
+		
 	}
 
 }
@@ -110,13 +135,83 @@ class per {
 		String user_name = "이경민";
 		String user_id = "lee";
 		String user_info = user_name + "," + user_id;
-		return user_info;
-		
-		
-		//메소드3
-		
-		
+		return user_info;		
 	}
-	//return new String[] {user_name,user_id};	-> 바로 보내도 됨
-	//값을 두개 보내야할 경우 배열로 만들어서 보낼 수 있다.
+	public String[] userinfo2() {
+		String user_name = "이경민";
+		String user_id = "lee";
+		String user_array[] = {user_name,user_id}; //해당 1개 이상의 값을 return으로 보낼 경우
+		//값을 두개 보내야할 경우 배열로 만들어서 보낼 수 있다.
+		//return new String[] {user_name,user_id};	-> 바로 보내도 됨
+		return user_array;
+	}
+}
+class t3 {	//클래스에 바로 쓰는걸 필드값이라고 한다.
+	//필드값에 올려놓으면 클래스 안에 있는 여러 메소드에서 가져다 쓸 수 있음
+	String ak1 = null;	//void, 자료형 메소드 로드 가능
+	private String ak2;	//해당 클래스에서만 사용 가능
+	//public static String ak3;	//전부 사용 가능
+	
+	public void dtr1 (String us) {
+		this.ak2 = us;	//main에서 보낸 값을 필드에 있는 private 함수에 전달
+		System.out.println(ak2);
+	}
+	public String dtr2() {	//자료형은 return으로 보내기 & 자료형에서 출력 못함
+		ak1 = "로컬푸드";
+		return ak1;
+	}
+
+}
+class t4 {
+	String user_id = null;
+	private String key = "a1234567";
+	public String checks(String key2) {
+		String msg = null;
+		if(key.equals(key2)) {
+			if(user_id.equals("lee")) {
+				msg = "데이터 확인 중";
+			}
+			else {
+				msg = "데이터 확인 불가";
+			}
+		}
+		else {
+			msg = "error";
+		}
+		return msg;
+	}
+}
+class t5 {
+	private String name;
+	private int age;
+	private String email;
+	private int point;
+	private String email_cp;
+	public t5(String name2, int age2, String email2, int point2) {
+		//setter 형태 : 인자값을 받아서 private로 넘기는 형태
+		this.name = name2;
+		this.age = age2;
+		this.email = email2;
+		if(point2 < 0) {	//포인트는 음수값으로 떨어지면 안되니까
+			this.point = 0;
+		}
+		else {
+			this.point = point2;
+		}
+	}
+	public void ak9() {
+		if(this.name == "이경민") {
+			this.name = "lee";
+			String em[] = this.email.split("@");	//@기준으로 나눠서 배열로 만든다
+			this.email_cp = em[1];	//이메일 회사 정보만 담음
+		}
+	}
+	public String data() {
+		ak9();	//안부르고 email_cp를 바로 리턴하면 main에서 출력할 때 null 뜸
+		return email_cp;
+	}
+	public int data2() {
+		//getter 형태 : main에 private값을 보내주는 형태
+		return this.point;
+	}
 }

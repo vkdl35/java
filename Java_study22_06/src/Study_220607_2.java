@@ -26,12 +26,22 @@ public class Study_220607_2 {
 		 */
 		
 		Scanner sc = new Scanner(System.in);
-		//System.out.println("구구단 합계치를 구할 숫자를 입력하세요.");
-		//int user = sc.nextInt();
-		//int r = aa.num2(user);
-	//	System.out.println(r);
+		System.out.println("구구단 합계치를 구할 숫자를 입력하세요.");
+		int user = sc.nextInt();
+		int r = aa.num2(user);
+		System.out.println(r);
 		sc.close();
 		aa = null;
+		
+		/*
+		 * [응용문제3]
+		 * 협업 프로그래머가 해당 DB에 값중 홀수값에 대한 총 갯수를 받고자 합니다.
+		 * 해당 갯수가 출력될 수 있도록 코드를 작성하세요.
+		 */
+		
+		DB1 db = new DB1();
+		System.out.println(db.te());
+		db = null;
 		
 		/*
 		 * [응용문제4] -> 숙제
@@ -57,14 +67,33 @@ class ak5 {
 		return total;
 	}
 	public int num2(int a) {
-		//반복문과 조건문 안에 리턴 사용 불가, 더블 반복문이어도 권고하지 않음
+		// 반복문과 조건문 안에 리턴 사용 불가, 더블 반복문이어도 권고하지 않음
 		int w = 1;
 		int total = 0;
-		while(w < 10) {
+		while (w < 10) {
 			total += w * a;
 			w++;
 		}
 		return total;
+	}
+}
+class DB1 {
+	private int[] dbd;
+	private int total;
+	public DB1() {
+		int dbt[] = { 15, 22, 17, 14, 32, 35, 19, 33 };
+		this.dbd = dbt;
+	}
+	public int te() {
+		int ea = this.dbd.length;
+		int w = 0;
+		while (w < ea) {
+			if (w % 2 == 1) {
+				this.total++;
+			}
+			w++;
+		}
+		return this.total;
 	}
 }
 class menus {
@@ -83,7 +112,6 @@ class menus {
 	      this.box = new String[5];
 	      int w = 0;
 	      this.ct = 0;
-	      
 	      while(w < ea) {
 	         if(this.m[1][w].equals("Y")) {
 	            this.box[this.ct]=m[0][w];
@@ -93,5 +121,4 @@ class menus {
 	      }
 	      return this.box;
 	   }
-
-	}
+}
