@@ -15,7 +15,6 @@ public class awt6 {
 class mimi extends awt6_abstract {
 	
 	private int ai2;
-	private String msg2 = "";
 	boolean k1;
 	
 	
