@@ -30,9 +30,6 @@ public class Study_220608 {
 		bix2 b = new bix2();
 		b.bc("¿Ã∞ÊπŒ");
 		
-		
-		
-		
 	}
 
 }
