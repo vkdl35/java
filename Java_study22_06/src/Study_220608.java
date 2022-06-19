@@ -1,3 +1,4 @@
+import Study_package.Study_220608_connect;	//외부 클래스 호출
 
 public class Study_220608 {
 
@@ -23,12 +24,22 @@ public class Study_220608 {
 		String nm2 = nm.replace(" ", "");	//공백제거
 		System.out.println(nm2);
 		
-		//메소드 11이랑 app1 이론만 적기
+		/* 외부 클래스 호출 */
+		
+		Study_220608_connect a = new Study_220608_connect();	//main메소드를 로드하게 됩니다.
+		//b.main(args);	//메인 클래스 호출
+		//다른 파일에 있는 main class를 불러올 때 sysout 사용불가(해당 class main에서 사용해야함)
+		a.abox();
 		
 		/* extends */
 		
 		bix2 b = new bix2();
 		b.bc("이경민");
+		
+		/* extends 사용시 주의사항 */
+		
+		mth1 m1 = new mth1();
+		mth2 m2 = new mth2(0);
 		
 	}
 
@@ -72,5 +83,20 @@ class bix2 extends bix{
 		this.user_id = lee;
 		System.out.println(this.user_id);
 		System.out.println(this.user_rpw);
+	}
+}
+class mth1 {	
+	public int no;
+	public mth1() {	//constructor에 인수값을 넣으면 main에서 상속 class를 로드할 수 없음
+		//constructor를 상속하려면 인수값은 무조건 비워야함
+		this.no = 20;
+		System.out.println("mth1");
+	}
+}
+class mth2 extends mth1 {
+	public mth2(int a) {
+		this.no = 50;
+		System.out.println(this.no);
+		System.out.println("mth2");
 	}
 }
