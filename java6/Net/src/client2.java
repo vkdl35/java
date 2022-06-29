@@ -1,4 +1,5 @@
 import java.net.*;
+import java.util.Scanner;
 import java.io.*;
 public class client2 {
  //소켓 생성
@@ -10,11 +11,16 @@ public class client2 {
  //Reader 서버
  BufferedReader br1=null;
  
+ Scanner sc = null;
+ 
  client2(String ip,int port){
   try {
    //서버 연결
+	  this.sc = new Scanner(System.in);
+		System.out.println("아이디를 생성하세요.");
+		String mid = this.sc.nextLine();
    cli = new Socket(ip,port);
-   System.out.println("서버와 연결되었습니다.");
+   System.out.println("새로운 채팅방에 입장했습니다." + mid + "님이 입장했습니다.");
    
    InputStream is1 = cli.getInputStream();
    OutputStream os1 =  cli.getOutputStream();
@@ -33,13 +39,13 @@ public class client2 {
   do{
    //화면단
    //client 메세지 입력
-   System.out.print("할말 : ");
+   System.out.print(mid+": ");
    msg1 = br.readLine();
-   bw.write(msg1+"\n");
+   bw.write(mid+":"+msg1+"\n");
    bw.flush();
    //server 메세지 출력
    msg=br1.readLine();
-   System.out.println("서버 : "+msg);
+   System.out.println(msg);
     
    }while(!(msg1.equals("exit")));
    
@@ -61,7 +67,7 @@ public class client2 {
  }
  
  public static void main(String args[]){
-  new client2("127.0.0.1", 8080);
+  new client2("127.0.0.1", 8019);
  }
  
 }
