@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>HTML 1일차 HTML3.0 기본태그2</title>
+</head>
+<body>
+<!-- 
+select : 사용자가 범위 안에 있는 option을 선택할 수 있는 태그
+textarea : 텍스트박스 (안에 주석 사용 불가능)
+cols : 한 줄당 몇자까지 표시할건지를 설정
+rows : 처음에 보여지는 줄 수
+"submit" : 사용자가 입력한 데이터를 제출함. form과 함께 사용하며 키보드 Enter를 누를경우 작동합니다. 
+"reset" : 초기화
+form : 사용자가 입력한 데이터를 전송하기 위한 태그
+method : 전송하는 형태
+button : form과 상관없이 단독으로 행동, 클릭만 가능하고 키보드 안먹음, 자바 스크립트와 같이 사용해야만 작동함
+ -->
+<select>
+<option>SKT</option>
+<option>KT</option>
+<option>LGT</option>
+<option>알뜰폰</option>
+</select><br><br>
+<textarea cols="50" rows="10">이용약관</textarea><br>
+<form method="post" action="https://www.naver.com">
+<input type="text"><br>
+<input type="checkbox">SMS수신<br>
+<input type="password"><br><br>
+<input type="submit" value="전송">
+<input type="button" value="전송2" onclick="abc()"><br>
+<input type="reset" value="취소"><br>
+</form>
+
+</body>
+
+</html>
+
+<script>
+function abc() {
+	location.href="http://nate.com"
+}
+</script>

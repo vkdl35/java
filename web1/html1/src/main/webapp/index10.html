@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>HTML 2일차 HTML 4.0 + CSS 2.0</title>
+<!-- 태그에 style을 바로 적용하면 코드가 너무 길어지기 때문에 style 태그를 따로 빼서 적용할 수 있음. 
+	 class : . 사용
+	 id : # 사용 -->
+	<style>
+		.box{
+		width: 100px;
+		height: 100px;
+		background-color: orange;
+		}
+		#box{
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+		}
+		.color1{
+		background-color: black;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- 
+	[class(style을 사용하기 위한 속성), id(Javascript), name(backend에게 전송하는 속성)] 
+	class : 중복 사용이 가능하기 때문에 퍼블리셔가 사용
+	id : 중복 사용이 불가능. 자바 스크립트 코드를 짜는 프론트엔드가 사용
+	name : java로 값을 받아야하기 때문에 백엔드가 사용
+	-->
+	<input type="text" name="mid" id="mid" class="mid">
+	<div style="width: 100px; height: 100px; background-color: blue;"></div>
+	<div class="box"></div>
+	<!-- id는 중복 사용이 불가능함. 자바 스크립트에서 실행이 안됨. -->
+	<div id="box"></div>
+	<!-- 같은 style시트를 사용하는 경우 변경 요소만 빼서 style시트에 추가할 수 있음 (최대 10개) -->
+	<div class="box color1"></div>
+	
+	
+</body>
+</html>
