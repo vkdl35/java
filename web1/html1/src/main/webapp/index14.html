@@ -1,30 +1,63 @@
-<!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="EUC-KR">
-<title>���빮��</title>
+<meta charset="utf-8">
+<title>응용문제</title>
 <style>
-	body{ margin: 0; padding: 0; }
-	.box{ width: 350px; height: 115px; border: 1px solid black; border-radius: 16px;
-		  padding: 15px }
-	.ulcss{ width: 350px; height: 115px; list-style: none; margin: 0; padding: 0; 
-			background-color: gray; }
-	.li1{ width: 98px; height: 35px;  }
-	.li2{ width: 220px; }
-	.li3{ width: 348px; }
-	.li4{ width: 350px; height: 35px; background-color: black; text-align: center; color:white; }
-	.licss{ width: 350px; height: 37px; margin-bottom: 5px;}
+body {
+   margin: 0;
+   padding: 0;
+}
+
+.box {
+   width: 350px;
+   height: 115px;
+   border: 1px solid black;
+   border-radius: 10px;
+   padding: 15px;
+}
+
+.ulcss {
+   width: 350px;
+   height: 115px;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+.licss { width:350px; height:35px; margin-bottom:5px; }
+.nomargin { margin-bottom:0px; }
+.mail1 { width:100px; height:35px; float:left; }
+.mail2 { width:220px; height:35px; float:left; }
+.pass { width:350px; height:35px; }
+.btn { width:350px; height:35px; }
+.fc { width:30px; height:35px; display: block; float:left;
+text-align:center; line-height: 35px; }
 </style>
 </head>
+<!-- 
+퍼블리싱 작업순서 
+1. 전체 아웃라인만 먼저 작업
+2. 각 태그별로 class로 사이즈를 정확하게 조절
+3. 태그별로 중복되지 않도록 구성 합니다.
+4. 각 입력파트를 구현하며, 입력파트에 맞는 class를 적용
+5. 세부적인 사이즈 및 여백 공간을 조절합니다.
+-->
 <body>
-
-<div class="box">
-	<ul class="ulcss">
-		<li class="licss"><input type="text" class="li1">@<input type="text" class="li1 li2"></li>
-		<li class="licss"><input type="password" style="width: 340px; height: 33px;"></li>
-		<li class="licss"><input type="submit" value="�α���" class="li4" ></li>
-	</ul>
-</div>
-
+<form name="fm" id="fm" method="post" action="./index14.jsp">
+   <div class="box">
+      <ul class="ulcss">
+         <li class="licss">
+         <input type="text" name="user_email1" class="mail1">
+         <span class="fc">@</span>
+         <input type="text" name="user_email2" class="mail2">
+         </li>
+         <li class="licss" style="clear:both;">
+         <input type="password" class="pass" name="user_pw">
+         </li>
+         <li class="licss nomargin">
+         <input type="submit" value="로그인" class="btn">
+         </li>
+      </ul>
+   </div>
+</form>
 </body>
 </html>
