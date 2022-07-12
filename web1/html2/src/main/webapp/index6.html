@@ -9,33 +9,48 @@
 	span {display: block;}
 	ul,ol {list-style: none; margin: 0; padding: 0;}
 	/* position : absolute에 margin:0 auto; (x) */
-	.top {width: 945px; height: 80px; background-color: skyblue; margin: 0 auto;}
-	.top_input {width: 240px; height: 50px; background-color: white; border: 0; margin: 15px 0px 0px 15px;}
-	.top_span {height: 40px; } 
-	.top_ol {height: 40px; width: 300px; float: right;}
-	.top_li {width: 75px; height: 40px; text-align: center; line-height: 40px; float: left; font-size: 12px;}
-	
+	.menu {width: 1200px; height: 80px; margin: 0 auto; background-color: skyblue; padding-top: 15px; position: relative;}
+	.logo {position: absolute; width: 240px; height: 50px; background-color: green; margin-left: 15px;}
+	.main_menu {position: absolute;width: 600px; height: 50px; background-color: purple; right: 15px;}
+	.banner{ position: relative; width: 1200px; height: 400px; background-color: blue; margin: 0 auto; text-align: center;} 
+		/* 자식태그가 inline, inline-block일 경우 text-align: center로 화면 가운데로 정렬할 수 있습니다. */
+	.disc{ width: 15px; height: 15px; background-color: black; border-radius: 100%; float: left; margin-left: 10px;}
+	.nomargin{ margin-left: 0px; background-color: red; }
+	.disc_span{display:inline-block; height:15px; margin: 0 auto; margin-top: 350px;}
+	/* 
+		중요 : nmargin : 0 auto; 사용할 수 있는 경우 
+		1. position : absoluto(X)
+		2. width값이 무조건 있어야 가넝
+	*/
+	/* 
+		inline, inline-block : 스판에 주로 사용하는 속성입니다.  
+		inline : 자동사이즈로 조절이 되나 줄바꿈을 하지 않음 (width,height가 적용이되나 line-height 적용 불가능)
+		inline-block : 자동 사이즈로 조절이 되나 줄바꿈을 하지 못함(line-height 적용 가능)
+	*/
+	/* 
+		margin-left:auto, margin-right:auto : 부모 태그 가로 기준으로 왼쪽, 오른족을 동일한 사이즈로 계산하여 
+		
+	 */
 </style>
 </head>
 <body>
 <!-- 최상단(로그인~고객센터) -->
-<div class="top">
-	<span><input type="button" value="로고" class="top_input"></span>
-	<span class="top_span">
-		<ol class="top_ol">
-			<li class="top_li">HOME</li>
-			<li class="top_li">LOGIN</li>
-			<li class="top_li">MEMBER</li>
-			<li class="top_li">CUSTOMER</li>
-		</ol>
-	</span>
-</div>
+
 <!-- 상단 메뉴 파트 -->
 <div class="menu">
-	
+	<span class="logo"></span>
+	<span class="main_menu"></span>
 </div>
 <!-- 배너 파트 -->
-
+<div class="banner">
+	<span class="disc_span">
+		<div class="disc nomargin"></div>
+		<div class="disc"></div>
+		<div class="disc"></div>
+		<div class="disc"></div>
+		<div class="disc"></div>
+	</span>
+</div>
 <!-- 상품출력 파트 -->
 
 <!-- 카피라이터 파트 -->

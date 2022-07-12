@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙제1</title>
+    <style>
+        body{margin: 0; padding: 0;}
+        ul,li{margin: 0; padding: 0; list-style: none;}
+        .menubar_bar{
+            width: 1200px; 
+            height: 80px;
+            margin: 0 auto;
+            background-color: skyblue;
+            position: relative;            
+        }
+        .logo{
+            width: 240px;
+            height: 50px;
+            background-color: darksalmon;
+            border-radius: 10px;
+            position: absolute;
+            left: 15px; top: 15px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+        .menubar_list{
+            float: right;
+            width: 400px;
+            height: 50px;
+            margin-top: 20px;
+            margin-right: 15px;
+        }
+        .menubar_list li{
+            float: left;
+            width: 100px;
+            text-indent: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .main_view{
+            width: 1200px; 
+            height: 400px; 
+            background-color: lightseagreen;
+            margin: 0 auto;
+           
+        }
+        .view_btn{
+            width: 115px; height: 15px;
+           
+            margin: 0 auto;
+        }
+        .view_btn li{
+            width: 15px; height: 15px;
+            margin: 0 auto;
+            float: left;
+            background-color: aliceblue;
+            border-radius: 50px;
+            margin-right: 10px;
+            margin-top: 360px;
+        }
+        .view_btn li:first-child{
+            background-color: plum;
+        }
+        .view_btn li:last-child{
+            margin-right: 0px;
+        }
+        .back {width: 1200px; height: auto; margin: 0 auto; background-color: gray;}
+		.ulcss{width: 1120px; height: auto; margin: 0 auto; padding-top: 40px;}
+		.ulcss li{width: 250px; height: 300px; float: left; margin-right: 40px; background-color: black; } 
+		.ulcss li:last-child {margin-right: 0px;}
+		.copyright{width: 1200px; float: left; height: 100px; background-color: black; margin: 0 auto; clear: both; color:white;}
+    </style>
+</head>
+<body>
+    <!-- 상단 메뉴 파트 -->
+    <div class="menubar_bar">
+        <span class="logo">LOGO</span>
+        <ul class="menubar_list">
+            <li>HOME</li>
+            <li>LOGIN</li>
+            <li>MEMBER</li>
+            <li>CUSTOMER</li>
+        </ul>
+    </div>
+	<!-- 배너 파트 -->
+    <div class="main_view">
+        <ul class="view_btn">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+	
+	<!-- 상품출력 파트 -->
+	<div class="back">
+		<ul class="ulcss">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>	
+		<ul class="ulcss">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- 카피라이터 파트 -->
+	<div class="copyright">
+		<span>Copyright 20022<a href="http://ftc.go.kr/bizCommPop.do?wrkr_no=1428138153" target="_black">[~~~~]</a></span>
+	</div>
+</body>
+</html>
