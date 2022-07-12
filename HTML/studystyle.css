@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+body,ul,li{margin: 0; padding: 0; list-style: none;}
+span{display: block;}
+.ex{font-family: "궁서"; font-size: 20px; color: brown;}
+.hi{color: aquamarine !important} /*!important 최대한 사용하지 않는게 좋다.*/
+body{background:url(images/back.gif); background-size: 20%;}
