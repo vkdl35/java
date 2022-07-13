@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTML 4일차 HTML5.0 + CSS3.0 </title>
-<link rel="stylesheet" type="text/css" href="./index10.css" />
-<link rel="stylesheet" type="text/css" href="http://kbsn.or.kr/~hys950526/index10.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 5일차 HTML 5.0 + CSS 3.0</title>
+    <link rel="stylesheet" type="text/css" href="./index11.css?v=1" />
 </head>
 <body>
-	<div class="box"></div>
-	<div class="box2"></div>
-	<br>
-	<!-- svg : 벡터 그래픽 + XML 기반 : 이미지의 크기와 관계없이 절대 이미지가 깨지지 않음
-		 색상을 원하는 색으로 마음껏 변경이 가능함 -->
-	<img src="./ht.png" style="width: 300px; height: 300px; background-color: skyblue;">
-	<img src="./ht.svg" style="width: 300px; height: 300px; background-color: orange;">
-
+    <header class="header_css"> <!--최상단에 사용하는 태그 (무조건 한번만 사용)-->
+        <div class="header_div"></div>
+    </header>
+    <nav class="nav_css"></nav> <!--대메뉴, 소메뉴 사용합니다.-->
+    <main class="main_css"> <!--배너, 상품출력, 각종 컨텐츠-->
+        <section class="section_1"></section> <!--배너-->
+        <section class="section_2"> 
+            <aside class="aside_left"></aside> <!--왼쪽 컨텐츠(독립성)-->
+            <article class="article_right"></article><!--오른쪽 컨텐츠(독립성)-->
+        </section>
+        <article class="article_banner"></article> <!--이벤트 광고배너-->
+        <figure class="notice"></figure> <!--figure : 문서, 이미지, 다이어그램-->
+    </main>
+    <footer class="footer_css"> <!--카피라이터에 사용-->
+    </footer>
 </body>
 </html>
