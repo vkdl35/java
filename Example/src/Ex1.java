@@ -5,6 +5,8 @@ public class Ex1 {
 		String a = "홍길동";
 		System.out.println(a);
 
+		
+		
 	}
 
 }
